@@ -17,7 +17,7 @@ export class QuotesRequest {
 
     }
 
-    async getQuotes():Promise<QuotesResponseSchema> {
+    async getQuotes(){
         const response = await this.request.get(this.url);
         expect(response.status()).toBe(200);
 

@@ -47,12 +47,11 @@ export class PizzaRequest {
 
     }
 
-    async createPizza(data: PizzaPayloadSchema):Promise<PizzaResponseSchema> {
+    async createPizza(data: PizzaPayloadSchema, token?: string) {
         const response = await this.request.post(this.url, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'token abcdef0123456789',
-            },
+            headers: token ? {
+                'Authorization': `token ${token}`,
+            } : undefined,
             data: data
         });
         expect(response.status()).toBe(200);

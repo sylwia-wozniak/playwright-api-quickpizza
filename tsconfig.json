@@ -5,6 +5,7 @@
       "@fixtures/*": ["playwright/fixtures/*"],
       "@requestObject/*": ["playwright/requestObject/*"],
       "@utils/*": ["playwright/utils/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true
   }
 }

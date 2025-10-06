@@ -17,10 +17,9 @@ export class ToolsRequest {
 
     }
 
-    async getTools():Promise<ToolsResponseSchema> {
+    async getTools() {
         const response = await this.request.get(this.url, {
             headers: {
-                'Content-Type': 'application/json',
                 'Authorization': 'token abcdef0123456789',
             },
         });

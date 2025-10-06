@@ -1,7 +1,7 @@
 import { APIRequestContext, expect } from "@playwright/test";
 import { z } from "zod";
-import {sendOverLimitRating} from "@fixtures/data/ratings.fixture";
-import {errorsMessages} from "@utils/constants";
+import { sendOverLimitRating } from "@fixtures/data/ratings.fixture";
+import { errorsMessages } from "@utils/constants";
 
 const ratingsResponseSchema = z.object({
     id: z.number(),
@@ -27,12 +27,11 @@ export class RatingsRequest {
 
     }
 
-    async sendRatings(data: RatingsPayloadSchema):Promise<RatingsResponseSchema> {
+    async sendRatings(data: RatingsPayloadSchema, token?: string) {
         const response = await this.request.post(this.url, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'token abcdef0123456789',
-            },
+            headers: token ? {
+                'Authorization': `token ${token}`,
+            } : undefined,
             data: data
         });
         expect(response.status()).toBe(201);
