@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.6.2",
+    "playwright": "^1.55.1",
+    "prettier": "^3.6.2",
+    "zod": "^4.1.11"
+  },
+  "scripts": {
+    "api-headless": "npx playwright test",
+    "show-report": "npx playwright show-report",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  }
+}

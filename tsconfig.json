@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@fixtures/*": ["playwright/fixtures/*"],
+      "@requestObject/*": ["playwright/requestObject/*"],
+      "@utils/*": ["playwright/utils/*"]
+    }
+  }
+}
